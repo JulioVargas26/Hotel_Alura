@@ -8,6 +8,7 @@ import java.awt.Panel;
 import java.awt.Color;
 import java.awt.SystemColor;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Toolkit;
@@ -108,7 +109,11 @@ public class MenuPrincipal extends JFrame {
 		btnexit.addMouseListener(new MouseAdapter() {
 			@Override
 			public void mouseClicked(MouseEvent e) {
-				System.exit(0);
+				if (JOptionPane.showConfirmDialog(null, 
+						"Desea Salir, ¿Seguro?",
+						"Confirmar", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
+					System.exit(0);
+				}
 			}
 			@Override
 			public void mouseEntered(MouseEvent e) {
